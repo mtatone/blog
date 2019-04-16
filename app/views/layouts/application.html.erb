@@ -13,63 +13,64 @@
   <body>
     <div id="wrapper">
       <div id="wrapper-2">
-        <div id="header">
-          <div id="logo">
-            <a href="/">
-              <img id="logo" alt="Logo" src="/assets/index.png">
-            </a>
-          </div>
-          <p>All Posts</p>
-          <div>
-            <p class="sign_in">
-            <a href="/users/sign_in">Login</a> 
-            </p>
-            <button class="button">
-              <a href="/posts/new"> New Post</a>
-            </button>
-            <button class="button">
-              Logout
-            </button>
-          </div>
+        <div id="sidebar">
+          <ul>
+            <li class="category">Website</li> 
+            <li>
+              <a href="/">Blog</a>
+            </li> 
+            <li>
+              <a href="/about">About</a>
+            </li> 
+          </ul>
+          <ul>
+            <li class="category">Social</li> 
+            <li>
+              <a href="https://www.facebook.com/">Facebook</a>
+            </li> 
+            <li>
+              <a href="https://github.com/mtatone">Github</a>
+            </li> 
+            <li>
+              <a href="https://www.instagram.com">Instagram</a>
+            </li>
+            <li>
+              <a href="mailto:m.tatone@hotmail.com">Email</a>
+            </li>
+          </ul>
         </div>
-        <div id="wrapper-3">
-          <div id="main_content">
-            <div id="sidebar">
-              <ul>
-                <li class="category">Website</li> 
-                <li>
-                  <a href="/">Blog</a>
-                </li> 
-                <li>
-                  <a href="/about">About</a>
-                </li> 
-              </ul>
-              <ul>
-                <li class="category">Social</li> 
-                <li>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                </li> 
-                <li>
-                  <a href="https://github.com/mtatone">Github</a>
-                </li> 
-                <li>
-                  <a href="https://www.instagram.com">Instagram</a>
-                </li>
-                <li>
-                  <a href="mailto:m.tatone@hotmail.com">Email</a>
-                </li>
-              </ul>
+        <div id="main_content">
+          <div id="header">
+            <div id="logo">
+              <a href="/">
+                <img id="logo" alt="Logo" src="/assets/index.png">
+              </a>
             </div>
-            <div id="posts">
-              <% flash.each do |name , message| %>
-                <%= content_tag(:div, msg, class:"alert") %>
-              <% end %>
-              <%= yield %>
+            <div id="title">
+              <p>All Posts</p>
+            </div>
+            <div id="buttons">
+              <a class="button" href="/posts/new"> New Post</a>
+              <div id="login-logout">
+              <% require 'pry'; binding.pry %>
+                  <button class="button">
+                    Logout
+                  </button>
+                  <button class="sign_in">
+                    <a href="/users/sign_in">Login</a> 
+                  </button>
+              </div>
             </div>
           </div>
+          <div id="posts">
+            <% flash.each do |name , message| %>
+              <%= content_tag(:div, msg, class:"alert") %>
+            <% end %>
+            <%= yield %>
+          </div>
         </div>
-        <div id="footer">
-        </div>
+      </div>
+      <div id="footer">
       </div>
     </div>
   </body>
