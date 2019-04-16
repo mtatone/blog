@@ -14,57 +14,11 @@
     <div id="wrapper">
       <div id="wrapper-2">
         <div id="header">
-        </div>
-        <div id="wrapper-3">
-          <div id="main_content">
-            <div id="sidebar">
-            </div>
-            <div id="posts">
-            </div>
+          <div id="logo">
+            <a href="/">
+              <img id="logo" alt="Logo" src="/assets/index.png">
+            </a>
           </div>
-        </div>
-        <div id="footer">
-        </div>
-      </div>
-    </div>
-
-
-
-
-    
-      <div id="sidebar">
-        <div id="logo">
-          <a href="/">
-            <img alt="Logo" src="/assets/index.png">
-          </a>
-        </div>
-        <ul>
-          <li class="category">Website</li> 
-          <li>
-            <a href="/">Blog</a>
-          </li> 
-          <li>
-            <a href="/about">About</a>
-          </li> 
-        </ul>
-        <ul>
-          <li class="category">Social</li> 
-          <li>
-            <a href="https://www.facebook.com/">Facebook</a>
-          </li> 
-          <li>
-            <a href="https://github.com/mtatone">Github</a>
-          </li> 
-          <li>
-            <a href="https://www.instagram.com">Instagram</a>
-          </li>
-          <li>
-            <a href="mailto:m.tatone@hotmail.com">Email</a>
-          </li>
-        </ul>
-      </div>
-      <div id="main_content">
-        <div id="header">
           <p>All Posts</p>
           <div>
             <p class="sign_in">
@@ -78,11 +32,45 @@
             </button>
           </div>
         </div>
-        <% flash.each do |name , message|%>
-          <%= content_tag(:div, msg, class:"alert") %>
-        <% end %>
-        <div id="posts">
-          <%= yield %>
+        <div id="wrapper-3">
+          <div id="main_content">
+            <div id="sidebar">
+              <ul>
+                <li class="category">Website</li> 
+                <li>
+                  <a href="/">Blog</a>
+                </li> 
+                <li>
+                  <a href="/about">About</a>
+                </li> 
+              </ul>
+              <ul>
+                <li class="category">Social</li> 
+                <li>
+                  <a href="https://www.facebook.com/">Facebook</a>
+                </li> 
+                <li>
+                  <a href="https://github.com/mtatone">Github</a>
+                </li> 
+                <li>
+                  <a href="https://www.instagram.com">Instagram</a>
+                </li>
+                <li>
+                  <a href="mailto:m.tatone@hotmail.com">Email</a>
+                </li>
+              </ul>
+            </div>
+            <div id="posts">
+              <% flash.each do |name , message| %>
+                <%= content_tag(:div, msg, class:"alert") %>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
         </div>
+        <div id="footer">
+        </div>
+      </div>
+    </div>
   </body>
 </html>

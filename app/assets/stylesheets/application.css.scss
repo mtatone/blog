@@ -6,21 +6,53 @@
   width: 100vw;
 }
 
+#wrapper-2 {
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  flex-direction: column;
+}
+
+#wrapper-3 {
+  height: 85%
+}
+
 #sidebar{
   display:flex;
-  height: 100vh;
-  width: 250px;
+  height: inherit;
+  width: 190px;
+  flex-direction: column;
+  background: #5d5e60;
+}
+
+#logo{
+  height: 80px;
+  width: 80px;
+  background: inherit;
 }
 
 #main_content{
-
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
 #header{
   display: flex;
+  flex-direction: row;
   width: 100vw;
+  height: 10%;
+  background: #a9abad;
 }
 
 #posts{
   display:flex;
+  background: #7f91a3;
+  width: 100vw;
+  height: inherit;
+}
+
+#footer{
+  height: 5%;
+  background: blue;
 }
