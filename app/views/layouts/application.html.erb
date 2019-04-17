@@ -10,55 +10,63 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div id="wrapper">
+  <body style="margin:0px 0px 0px 0px">
+    <div id="wrapper" >
       <div id="wrapper-2">
         <div id="sidebar">
-          <ul>
-            <li class="category">Website</li> 
-            <li>
-              <a href="/">Blog</a>
-            </li> 
-            <li>
-              <a href="/about">About</a>
-            </li> 
-          </ul>
-          <ul>
-            <li class="category">Social</li> 
-            <li>
-              <a href="https://www.facebook.com/">Facebook</a>
-            </li> 
-            <li>
-              <a href="https://github.com/mtatone">Github</a>
-            </li> 
-            <li>
-              <a href="https://www.instagram.com">Instagram</a>
-            </li>
-            <li>
-              <a href="mailto:m.tatone@hotmail.com">Email</a>
-            </li>
-          </ul>
+          <div id="logo">
+            <a href="/">
+              <img id="logo" alt="Logo" src="/assets/index.png">
+            </a>
+          </div>
+          <div id="nav-content">
+            <ul>
+              <li class="category">Website</li> 
+              <li>
+                <a href="/">Blog</a>
+              </li> 
+              <li>
+                <a href="/about">About</a>
+              </li> 
+            </ul>
+            <ul>
+              <li class="category">Social</li> 
+              <li>
+                <a href="https://www.facebook.com/">Facebook</a>
+              </li> 
+              <li>
+                <a href="https://github.com/mtatone">Github</a>
+              </li> 
+              <li>
+                <a href="https://www.instagram.com">Instagram</a>
+              </li>
+              <li>
+                <a href="mailto:m.tatone@hotmail.com">Email</a>
+              </li>
+            </ul>
+          </div>
+          <div id="login-logout">
+              <button class="button sign_out" onclick="window.location.href='/users/sign_out'">
+                Logout
+              </button>
+              <button class="button sign_in" onclick="window.location.href='/users/sign_in'">
+                Login
+              </button>
+          </div>
         </div>
         <div id="main_content">
           <div id="header">
-            <div id="logo">
-              <a href="/">
-                <img id="logo" alt="Logo" src="/assets/index.png">
-              </a>
-            </div>
             <div id="title">
               <p>All Posts</p>
             </div>
-            <div id="buttons">
-              <a class="button" href="/posts/new"> New Post</a>
-              <div id="login-logout">
-              <% require 'pry'; binding.pry %>
-                  <button class="button">
-                    Logout
-                  </button>
-                  <button class="sign_in">
-                    <a href="/users/sign_in">Login</a> 
-                  </button>
+            <div id="wrapper_buttons">
+              <div id="buttons" class="nav_buttons">
+                <button class="button new_post" onclick="window.location.href='/posts/new'">
+                  New Post
+                </button>
+                <button class="button return_all_posts" onclick="window.location.href='/'">
+                  Back to All Posts
+                </button>
               </div>
             </div>
           </div>
