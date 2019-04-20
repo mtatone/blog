@@ -71,7 +71,7 @@
             </div>
           </div>
           <div id="posts">
-            <% flash.each do |name , message| %>
+            <% flash.each do |name , msg| %>
               <%= content_tag(:div, msg, class:"alert") %>
             <% end %>
             <%= yield %>

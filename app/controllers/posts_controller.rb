@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   #creates a new post
@@ -14,8 +15,25 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       render 'new'
-
     end
+  end
+
+  def edit
+  end
+
+  #edit an existing post
+  def update
+    respond_to do |format|
+      @link.update
+    end
+  end
+
+  #delete an existing post
+  def destroy
+    binding.pry
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def show

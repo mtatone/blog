@@ -1,4 +1,9 @@
 <%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.messages.each do |name , message| %>
+      <%= content_tag(:div,"Error: " + name.to_s + " " + message.to_s[2..-3], class:"alert") %>
+    <% end %>
+  <% end %>
   <p>
     <%= f.label :title  %><br>
     <%= f.text_field :title  %> 
