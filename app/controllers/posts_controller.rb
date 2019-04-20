@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   #creates a new post
   def create
+    binding.pry
     @post = Post.new(post_params)
     if @post.valid?
       @post.save
@@ -19,18 +20,21 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   #edit an existing post
   def update
-    respond_to do |format|
-      @link.update
+    @post = Post.find(params[:id])
+    if @post.update(post_params.permit(:title, :body))
+      redirect_to @post
+    else
+      render 'edit'
     end
   end
 
   #delete an existing post
   def destroy
-    binding.pry
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path

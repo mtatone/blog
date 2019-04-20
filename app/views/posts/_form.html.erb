@@ -1,4 +1,4 @@
-<%= form_for :post, url: posts_path do |f| %>
+<%= form_for @post do |f| %>
   <% if @post.errors.any? %>
     <% @post.errors.messages.each do |name , message| %>
       <%= content_tag(:div,"Error: " + name.to_s + " " + message.to_s[2..-3], class:"alert") %>
