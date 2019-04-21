@@ -27,7 +27,7 @@
 
 #nav-content{
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #login-logout{
@@ -97,7 +97,7 @@
   width: 100%;
   height: inherit;
   flex-direction: column;
-  overflow-y: scroll; 
+  overflow-y: auto; 
 }
 .post_wrapper{
   font-family: inherit;
