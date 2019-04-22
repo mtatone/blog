@@ -9,7 +9,6 @@ class PostsController < ApplicationController
 
   #creates a new post
   def create
-    binding.pry
     @post = Post.new(post_params)
     if @post.valid?
       @post.save
