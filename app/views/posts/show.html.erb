@@ -2,14 +2,14 @@
   <h1 class="title"> 
     <%= @post.title  %>
   </h1>
-  <p class="date">
+  <p class="time_ago">
     Submitted <%= time_ago_in_words(@post.created_at) %> Ago |
     <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %>
     |
     <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
   </p>
 
-  <p class "body">
+  <p class= "body">
     <%= @post.body %>
   </p>
 </div>

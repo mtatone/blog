@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   root "posts#index"
 
   root "comments#index"
+
+  get '/about', to: 'pages#about'
 end
