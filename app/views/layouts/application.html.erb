@@ -46,12 +46,17 @@
             </ul>
           </div>
           <div id="login-logout">
-              <button class="button sign_out" onclick="window.location.href='/users/sign_out'">
-                Logout
-              </button>
-              <button class="button sign_in" onclick="window.location.href='/users/sign_in'">
+            <% if user_signed_in?%>
+              <%= button_to('Sign out', destroy_user_session_path, method: :delete) %>
+              <%# # <button class="button sign_out" onclick="config.sign_out_via = :get">
+              #   Logout
+              # </button> %>
+            <% else %>
+              <%= button_to('Sign in', '/users/sign_in')%>
+            <% end %>
+              <%# <button class="button sign_in" onclick="window.location.href='/users/sign_in'">
                 Login
-              </button>
+              </button> %>
           </div>
         </div>
         <div id="main_content">
@@ -65,9 +70,11 @@
             </div>
             <div id="wrapper_buttons">
               <div id="buttons" class="nav_buttons">
-                <button class="button new_post" onclick="window.location.href='/posts/new'">
-                  New Post
-                </button>
+                <% if user_signed_in?%>
+                  <button class="button new_post" onclick="window.location.href='/posts/new'">
+                    New Post
+                  </button>
+                <% end %>
               </div>
             </div>
           </div>
