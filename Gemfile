@@ -2,7 +2,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
-
+gem 'pry', '~> 0.12.2'
+gem 'coderay', '~> 1.1', '>= 1.1.2'
+gem 'method_source', '~> 0.9.2'
+gem 'rake', '~> 12.3', '>= 12.3.2'
+gem 'rspec', '~> 3.8'
+gem 'minitest', '~> 5.11', '>= 5.11.3'
+gem 'normalize-scss', '~> 7.0'
+gem 'rb-readline', '~> 0.5.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use sqlite3 as the database for Active Record
