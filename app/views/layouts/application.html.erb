@@ -57,15 +57,16 @@
         <div id="main_content">
           <div id="header">
             <div id="title">
-              <p>All Posts</p>
+              <% if request.path.eql?("/") %>
+               <p>All Posts</p>
+               <%elsif request.path.include?("posts")%>
+                <p> <%= link_to 'Back to All Posts', root_path%> </p>
+              <% end %>
             </div>
             <div id="wrapper_buttons">
               <div id="buttons" class="nav_buttons">
                 <button class="button new_post" onclick="window.location.href='/posts/new'">
                   New Post
-                </button>
-                <button class="button return_all_posts" onclick="window.location.href='/'">
-                  Back to All Posts
                 </button>
               </div>
             </div>
