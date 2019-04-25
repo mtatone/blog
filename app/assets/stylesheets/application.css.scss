@@ -18,11 +18,13 @@
 #sidebar{
   font-family: inherit;
   display:flex;
-  height: 100%;
+  height: 100vh;
+  z-index: 1;
   width: 190px;
   flex-direction: column;
-  background: #5d5e60;
+  background: #ececec;
   justify-content: space-between;
+  border-right: 0.5px solid black;
 }
 
 #nav-content{
@@ -32,6 +34,7 @@
 
 #login-logout{
   display: flex;
+  margin-bottom: 1em;
   flex-direction: column;
 }
 
@@ -46,8 +49,9 @@
   display: flex;
   flex-direction: row;
   height: 60px;
-  background: #a9abad;
+  background: #ececec;
   padding: 0.5em 0.5em 0.5em 1.5em;
+  border-bottom: 0.5px solid black;
 }
 
 #logo{
@@ -92,7 +96,6 @@
 
 #posts{
   display:flex;
-  background: #7f91a3;
   width: 100%;
   height: inherit;
   flex-direction: column;
@@ -130,8 +133,8 @@ div#comments{
 
 #footer{
   height: 30px;
-  background: blue;
   width: inherit;
+  border-top: 1px solid #000000;
 }
 
 .title{
@@ -169,4 +172,16 @@ div#comments{
 #about_wrapper{
   display: flex;
   flex-direction: row;
+}
+
+// ###########################################
+// ######### Devise Specific Pages ###########
+// ###########################################
+
+.devise_user_page{
+  padding: 1em 0 0 2em;
+}
+
+.field{
+  padding: 0.5em 0.5em 0.5em 0;
 }
